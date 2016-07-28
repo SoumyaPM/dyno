@@ -1,0 +1,27 @@
+<div>
+<div class="row">
+                    <div class="col-sm-2"><label for="repeatSelect"> Category: </label></div>
+                    <div class="col-sm-4">
+                        <select name="repeatSelect" id="repeatSelect" ng-model="selectedCategory" class="form-control">
+                            <option ng-repeat="category in toyCategory" value="{{category}}">{{category.CategoryName}}</option>
+                        </select>
+                    </div>
+                </div>
+    <table>
+        <tr ng-repeat="item in selectedCategory.items" ng-init="mainIndex=$index">
+        <td>{{item}}</td>
+            <!-- <td ng-repeat="(key,value) in item">
+                <table>
+                    <th title="{{key}}" ng-if="mainIndex===0">
+                        <span ng-hide="key==1">{{key}}</span>
+                    </th>
+                    <tr>
+                        <td class="light-table-td ">
+                            {{value}}
+                        </td>
+                    </tr>
+                </table>
+            </td> -->
+        </tr>
+    </table>
+</div>
